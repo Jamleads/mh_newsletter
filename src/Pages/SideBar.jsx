@@ -11,8 +11,8 @@ const SideBar = ({ sidebarOpen }) => {
 
   const logout = (e) => {
     e.preventDefault();
-    localStorage.clear;
-    window.location.reload;
+    localStorage.clear(); // Call clear as a function
+    window.location.href = "/"; // Reload to the root URL
   };
 
   return (
@@ -79,7 +79,7 @@ const SideBar = ({ sidebarOpen }) => {
       </div>
 
       <div className="logout ">
-        <div className="flex items-center gap-5 py-2 text-primary-mainBlue hover:bg-primary-mainGreen hover:text-white rounded-lg shadow-sm">
+        <div className="flex items-center gap-5 py-2 text-primary-mainBlue hover:bg-primary-mainGreen hover:text-white rounded-lg shadow-sm cursor-pointer">
           <BiLogOut className="text-3xl" />
           {sidebarOpen ? (
             <div className="page uppercase text-xl" onClick={logout}>
